@@ -1,0 +1,14 @@
+{
+  "testCaseId": "title-assert-001",
+  "name": "Verify Demo Page Title",
+  "url": "https://www.selenium.dev/selenium/web/web-form.html",
+  "actions": [
+    {
+      "type": "OPEN_URL"
+    },
+    {
+      "type": "ASSERT_TITLE",
+      "expected": "Web form"
+    }
+  ]
+}

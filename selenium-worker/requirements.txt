@@ -1,0 +1,3 @@
+# AutoTestHub - Selenium Automation Engine Dependencies
+# Selenium 4 includes built-in Selenium Manager to automatically manage browser drivers (e.g., ChromeDriver)
+selenium>=4.25.0,<5.0.0
