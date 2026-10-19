@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Selenium Control Desk</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Selenium Control Desk</h1>
+  <div class="sub">Pick a task, set its inputs, press Run, and watch the browser and log update.</div>
+  <span class="chip" id="status">Idle</span>
+  <button id="theme" aria-label="Toggle theme">Theme</button>
+</header>
+<main>
+  <div class="col">
+    <section class="card">
+      <h2>Task</h2>
+      <div class="tasks" id="tasks"></div>
+    </section>
+    <section class="card">
+      <h2 id="optTitle">Inputs</h2>
+      <div id="opts"></div>
+      <label for="speed">Speed: <span id="speedv">1×</span></label>
+      <input type="range" id="speed" min="0.5" max="4" step="0.5" value="1">
+      <label class="switch"><input type="checkbox" id="headless"> Headless mode (run Chrome without a visible window)</label>
+      <div class="bar"><i id="prog"></i></div>
+      <div class="mini">
+        <button class="primary" id="run">Run task</button>
+        <button class="danger" id="stop" disabled>Stop</button>
+      </div>
+    </section>
+  </div>
+  <div class="col">
+    <section class="browser" id="browserWrap" aria-label="Browser preview">
+      <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url" id="url">about:blank</div></div>
+      <div class="page" id="page"><p class="hint">Chrome isn’t open yet. Choose a task and press Run task.</p></div>
+    </section>
+    <section class="card">
+      <div class="row" style="justify-content:space-between;margin-bottom:8px"><h2 style="margin:0">Terminal output</h2><button id="clear">Clear</button></div>
+      <div class="term" id="term" role="log" aria-live="polite"></div>
+    </section>
+    <div class="two">
+      <section class="card">
+        <h2>form_submissions.txt</h2>
+        <pre class="file" id="file">No log written yet.</pre>
+        <div class="mini"><button id="copy">Copy log</button></div>
+      </section>
+      <section class="card">
+        <h2>Run history</h2>
+        <ul class="hist" id="hist"></ul>
+        <p class="empty" id="histEmpty">Finished runs will show up here.</p>
+      </section>
+    </div>
+    <p class="note">This page simulates each script step by step, using the same actions as your Python files. To drive a real Chrome window, run the scripts on your machine.</p>
+  </div>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>
