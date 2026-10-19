@@ -1,4 +1,5 @@
 const TestCase = require("../models/Testcase");
+const { runTestExecution } = require('../services/executionService');
 
 const createTest = async (req, res) => {
     try {
@@ -32,7 +33,32 @@ const getTests = async (req, res) => {
     }
 };
 
+const runTest = async (req, res) => {
+    try {
+        const testId = req.params.id;
+        const testCase = await TestCase.findById(testId);
+        
+        if (!testCase) {
+            return res.status(404).json({ success: false, message: "Test case not found" });
+        }
+
+        const executionResult = await runTestExecution(testCase);
+        
+        res.status(200).json({
+            success: true,
+            data: executionResult
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Execution failed",
+            details: error.message
+        });
+    }
+};
+
 module.exports = {
     createTest,
-    getTests
+    getTests,
+    runTest 
 };
