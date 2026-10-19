@@ -11,8 +11,8 @@ require("dotenv").config();
 const connectDB = require("./config/database");
 connectDB();
 
-const testRoutes = require("./routes/testRoutes");
-app.use("/api/tests", testRoutes);
+const testRoute = require("./routes/testRoute");
+app.use("/api/tests", testRoute);
 
 app.get("/api/health", (req, res) => {
     res.json({
