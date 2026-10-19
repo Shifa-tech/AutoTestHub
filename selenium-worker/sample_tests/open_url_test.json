@@ -1,0 +1,10 @@
+{
+  "testCaseId": "open-url-001",
+  "name": "Navigate to Selenium Web Form Demo",
+  "url": "https://www.selenium.dev/selenium/web/web-form.html",
+  "actions": [
+    {
+      "type": "OPEN_URL"
+    }
+  ]
+}

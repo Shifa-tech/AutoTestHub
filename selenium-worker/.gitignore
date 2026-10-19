@@ -1,0 +1,16 @@
+# Python virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+
+# Test execution outputs and screenshots
+screenshots/
+*.png
+*.log

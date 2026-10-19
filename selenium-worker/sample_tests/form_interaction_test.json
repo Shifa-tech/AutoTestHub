@@ -1,0 +1,31 @@
+{
+  "testCaseId": "form-flow-001",
+  "name": "Demo Web Form Submission Test",
+  "url": "https://www.selenium.dev/selenium/web/web-form.html",
+  "actions": [
+    {
+      "type": "OPEN_URL"
+    },
+    {
+      "type": "TYPE",
+      "locatorType": "name",
+      "locator": "my-text",
+      "value": "AutoTestHub User"
+    },
+    {
+      "type": "TYPE",
+      "locatorType": "name",
+      "locator": "my-password",
+      "value": "SafePassword123"
+    },
+    {
+      "type": "CLICK",
+      "locatorType": "css",
+      "locator": "button"
+    },
+    {
+      "type": "ASSERT_TITLE",
+      "expected": "Web form - target page"
+    }
+  ]
+}
