@@ -27,7 +27,7 @@ AutoTestHub operates on a decoupled multi-tier pipeline:
 ```
 
 ### Module Responsibilities:
-- **Member 1 (Ishree)**: Presentation Tier — `selenium-project/frontend/` (Control Desk, live terminal streaming, simulation viewport).
+- **Member 1 (Shriya Agarwal)**: Presentation Tier — `selenium-project/frontend/` (Control Desk, live terminal streaming, simulation viewport).
 - **Member 2 (Shifa Siddiqui)**: Backend API & Database — `backend/` (Express routes, MongoDB schemas, Mongoose models).
 - **Member 3 (Shruti Gupta)**: Selenium Engine — `selenium-worker/` (Runner CLI, dynamic action dispatchers, explicit waits, test harnesses).
 - **Member 4 (Shristi Neekhra)**: Execution Bridge — `backend/services/executionService.js` (child_process spawning, IPC stdin/stdout, pipeline integration).
@@ -140,4 +140,4 @@ python3 app.py
 - **Shristi Neekhra**: Execution Service, Integration Pipeline, Process Spawner, Mid-Semester Packaging.
 - **Shifa Siddiqui**: Backend API Gateway, Express Routing, MongoDB Database Architecture.
 - **Shruti Gupta**: Selenium Automation Engine, Chrome Lifecycle, Dynamic Actions, Test Suites.
-- **Ishree**: Frontend Control Desk, Simulation Visualizer, Responsive Component Styling.
+- **Shriya Agarwal**: Frontend Control Desk, Simulation Visualizer, Responsive Component Styling.

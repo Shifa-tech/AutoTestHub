@@ -5,7 +5,7 @@ const TASKS=[
  {id:'form',name:'Fill demo form',desc:'selenium_form.py · fill, submit and take a screenshot'},
  {id:'auto',name:'Auto-fill for many people',desc:'auto_form_fill.py · loop through a list and log each one'}
 ];
-const S={task:'demo',running:false,stop:false,people:[['Shriya','Aggarwal'],['Srishti','Neekhra'],['Shruti','Gupta'],['Shifa','Siddiqui']],
+const S={task:'demo',running:false,stop:false,people:[['Shriya','Agarwal'],['Srishti','Neekhra'],['Shruti','Gupta'],['Shifa','Siddiqui']],
  term:'Shriya',pass:'12345',text:'Shriya',query:'',history:[],file:''};
 const speedEl=$('speed');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms/ +speedEl.value));
