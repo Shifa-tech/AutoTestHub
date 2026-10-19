@@ -1,0 +1,12 @@
+{
+  "_id": "6ad5f308777225dd7c9950b7",
+  "testCaseId": "6ad5f308777225dd7c9950a4",
+  "status": "PASSED",
+  "executionTime": 1.48,
+  "screenshot": "screenshots/6ad5f308777225dd7c9950a4_20261019_160809_9fb515.png",
+  "message": "Page title matched 'Example Domain'",
+  "errorMessage": null,
+  "createdAt": "2026-10-19T10:38:09.145Z",
+  "updatedAt": "2026-10-19T10:38:09.145Z",
+  "__v": 0
+}

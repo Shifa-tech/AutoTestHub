@@ -1,0 +1,148 @@
+================================================================================
+AUTOTESTHUB — MID-SEMESTER DEMONSTRATION VIDEO LINK & PRESENTATION SCRIPT
+================================================================================
+
+PROJECT TITLE: AutoTestHub: Web Automation and Testing Platform using Selenium
+COURSE: Software Engineering (CS302)
+SECTION: Section [X] | GROUP: Group [XX]
+ACADEMIC YEAR: 2026
+
+--------------------------------------------------------------------------------
+1. ACCESSIBLE DEMONSTRATION VIDEO URL
+--------------------------------------------------------------------------------
+
+PRIMARY VIEW-ONLY LINK:
+https://drive.google.com/file/d/YOUR_VIEW_ONLY_VIDEO_LINK_HERE/view?usp=sharing
+
+BACKUP / MIRROR LINK (YouTube Unlisted / Institution Storage):
+https://youtu.be/YOUR_UNLISTED_VIDEO_ID_OR_LINK
+
+NOTE FOR EVALUATORS:
+The above link is configured with public view-only permissions ("Anyone with the link can view").
+No login or special access request is required to stream or download the video file.
+
+================================================================================
+2. FORMAL 5–7 MINUTE DEMONSTRATION SCRIPT & SPEAKER TIMELINE
+================================================================================
+Target Duration: 5 to 7 Minutes
+Recommended Resolution: 1080p (Full HD) at 30/60 fps with crisp audio commentary.
+
+--------------------------------------------------------------------------------
+PART 1: PROJECT TITLE & TEAM INTRODUCTION (0:00 – 0:45)
+SPEAKER: Shristi Neekhra (Integration Lead)
+--------------------------------------------------------------------------------
+[VISUAL: Slide 1 — Cover page with AutoTestHub logo, group details, and team member names]
+"Hello, respected evaluators and professor. Welcome to the mid-semester evaluation of our
+Software Engineering project: AutoTestHub — an automated web testing and orchestration
+platform using Selenium.
+I am Shristi Neekhra, the Integration Lead. Alongside me are my team members:
+- Shifa Siddiqui, who leads our Backend API architecture and MongoDB database design;
+- Shruti Gupta, who architected our core Python Selenium automation engine and test suites;
+- And Ishree, who designed our interactive Control Desk frontend and simulation interface.
+Over the past 6 weeks, our group has completed approximately 50% of the project, delivering
+a fully operational end-to-end testing pipeline."
+
+--------------------------------------------------------------------------------
+PART 2: BRIEF EXPLANATION OF THE PROBLEM (0:45 – 1:30)
+SPEAKER: Ishree (Frontend Lead)
+--------------------------------------------------------------------------------
+[VISUAL: Slide 2 — Problem diagram highlighting flaky scripts, driver version mismatch, and complexity]
+"Modern web applications undergo frequent releases, requiring rigorous regression testing.
+However, writing and maintaining raw Selenium automation scripts introduces significant friction:
+1. First, asynchronous DOM rendering causes timing flakiness and false-negative failures.
+2. Second, constant Chrome browser updates cause WebDriver binary incompatibilities.
+3. Third, most existing tools either require writing heavy boilerplate code or are proprietary,
+   bloated enterprise suites inaccessible to agile development teams.
+There was no simple, declarative platform that seamlessly bridges web dashboards, REST APIs,
+and headless browser workers. That is the exact problem AutoTestHub solves."
+
+--------------------------------------------------------------------------------
+PART 3: OVERVIEW OF THE PROPOSED SOLUTION (1:30 – 2:15)
+SPEAKER: Shifa Siddiqui (Backend & Database Lead)
+--------------------------------------------------------------------------------
+[VISUAL: Slide 3 — Solution overview highlighting declarative JSON tests and multi-tier design]
+"AutoTestHub provides a declarative, JSON-driven web automation platform. Instead of writing
+imperative code, testers define browser actions — such as navigating to a URL, typing text into
+forms, clicking elements, and asserting titles — in simple JSON schemas.
+Our platform ingests these schemas via REST endpoints, manages database persistence in MongoDB,
+and orchestrates isolated browser execution sessions with guaranteed cleanup, dynamic locators,
+explicit waits, and automated screenshot evidence capture."
+
+--------------------------------------------------------------------------------
+PART 4: SYSTEM ARCHITECTURE & IPC BRIDGE (2:15 – 3:15)
+SPEAKER: Shristi Neekhra (Integration Lead)
+--------------------------------------------------------------------------------
+[VISUAL: Screen Share — Architecture Diagram (Architecture_Diagram.pdf)]
+"To achieve this, we developed a 4-tier decoupled architecture:
+- At the top is the Presentation Tier: our Selenium Control Desk web UI.
+- Beneath that is the Backend Gateway: built on Node.js and Express, exposing endpoints like
+  POST /api/tests and POST /api/tests/:id/run.
+- Connected to Express is our asynchronous Execution Service. When a test is triggered, Node.js
+  spawns an isolated Python 3 child process, piping the test JSON directly into its standard input.
+- In the engine tier, our Python Selenium worker reads the payload, validates safety rules,
+  and manages Chrome WebDriver using Selenium Manager.
+- Output results are emitted as a single-line JSON payload on stdout, which Node.js extracts
+  via regex and saves to MongoDB, while all logging goes cleanly to stderr."
+
+--------------------------------------------------------------------------------
+PART 5: DEMONSTRATION OF WORKING FEATURES (3:15 – 4:45)
+SPEAKERS: Shruti Gupta (Engine Demo) & Ishree (Control Desk Demo)
+--------------------------------------------------------------------------------
+[VISUAL: Screen Recording 1 — Terminal running unit and integration tests]
+SHRUTI:
+"Let's see the engine in action. Here in the terminal, I run our automated test suite:
+'python3 -m unittest discover tests'.
+Notice: 16 automated tests run across both fast in-memory validation and our live local HTTP
+sandbox. Chrome initializes in headless mode, navigates, types inputs, clicks buttons, and
+evaluates assertions. Notice that both passing flows and intentional failure scenarios pass cleanly,
+generating timestamped PNG screenshots in the artifacts directory in just 18 seconds."
+
+[VISUAL: Screen Recording 2 — Browser opening http://localhost:5000 and triggering tasks]
+ISHREE:
+"Next, let's open the Selenium Control Desk at localhost:5000. Here you can see our responsive
+dashboard. We select the 'Form Interaction' task and click 'Run task'.
+Immediately, a real Chrome browser window launches, navigates to the target page, fills in the
+text and password fields, clicks submit, and saves the screenshot. The live terminal output
+shows each WebDriver statement executing in real time, and the history table records the run."
+
+[VISUAL: Screen Recording 3 — Terminal running backend/testExecution.js pipeline]
+SHRISTI:
+"Finally, we run our end-to-end integration pipeline in backend/testExecution.js. Node.js connects
+to MongoDB, creates a test case document, triggers our execution service, spawns the Python worker,
+and saves the final TestResult document back into MongoDB with the screenshot path and status PASSED."
+
+--------------------------------------------------------------------------------
+PART 6: EXPLANATION OF CURRENT LIMITATIONS (4:45 – 5:15)
+SPEAKER: Shifa Siddiqui (Backend Lead)
+--------------------------------------------------------------------------------
+[VISUAL: Slide 4 — Mid-Sem Limitations & Boundary Card]
+"As expected at the mid-semester stage (50% progress), several advanced features remain out of scope:
+1. Currently, test runs are executed sequentially per worker process without a distributed queue.
+2. The engine currently targets Google Chrome; multi-browser support (Firefox/Edge) is in development.
+3. Assertions are currently focused on page title and element visibility; advanced assertions like
+   visual pixel-diff comparison are planned for the second half of the semester."
+
+--------------------------------------------------------------------------------
+PART 7: REMAINING WORK & SPRINTS 4–8 ROADMAP (5:15 – 5:50)
+SPEAKER: Shruti Gupta (Engine Lead)
+--------------------------------------------------------------------------------
+[VISUAL: Slide 5 — Project Roadmap and Sprints 4 through 8]
+"For the remaining semester, our roadmap includes:
+- Sprint 4: Implementing advanced assertions for element text content and attribute values.
+- Sprint 5: Transitioning the frontend into a full React test builder dashboard.
+- Sprint 6: Integrating a Redis/BullMQ background queue for concurrent multi-test execution.
+- Sprint 7: Building CI/CD integration plugins for GitHub Actions.
+- Sprint 8: Cross-browser verification, performance profiling, and final release hardening."
+
+--------------------------------------------------------------------------------
+PART 8: INDIVIDUAL CONTRIBUTIONS & CONCLUSION (5:50 – 6:30)
+SPEAKERS: All Group Members
+--------------------------------------------------------------------------------
+[VISUAL: Slide 6 — Contribution Summary Table]
+SHRISTI: "I developed the asynchronous Execution Service, child_process IPC, and integration pipeline."
+SHIFA:   "I designed the MongoDB schemas, Mongoose models, and Express REST API gateway."
+SHRUTI:  "I architected the Python Selenium engine, action handlers, explicit waits, and test harness."
+ISHREE:  "I built the Selenium Control Desk UI, terminal streaming visualizer, and simulation engine."
+
+SHRISTI: "Thank you for your time and feedback. We are eager to answer any questions!"
+================================================================================

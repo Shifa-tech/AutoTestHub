@@ -1,6 +1,6 @@
 const { spawn } = require('child_process');
 const path = require('path');
-const TestResult = require('../models/TestResult'); // Using Member 2's actual database model
+const TestResult = require('../models/Testresult'); // Using Member 2's actual database model
 
 async function runTestExecution(testCase) {
     return new Promise((resolve, reject) => {
@@ -31,7 +31,7 @@ async function runTestExecution(testCase) {
                     testCaseId: testCase._id,
                     status: resultPayload.status,
                     executionTime: resultPayload.executionTime,
-                    screenshotPath: resultPayload.screenshot,
+                    screenshot: resultPayload.screenshot,
                     message: resultPayload.message,
                     errorMessage: resultPayload.errorMessage,
                     executedAt: new Date()

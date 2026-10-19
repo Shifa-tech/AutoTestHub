@@ -1,0 +1,26 @@
+# Environment variables
+.env
+.env.local
+
+# Node dependencies
+node_modules/
+package-lock.json
+
+# Python virtual environments & cache
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+
+# OS and Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Submission archives and generated reports
+*.zip
+submission_builder/

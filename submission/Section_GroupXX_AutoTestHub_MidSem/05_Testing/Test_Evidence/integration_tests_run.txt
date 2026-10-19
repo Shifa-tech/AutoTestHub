@@ -1,0 +1,60 @@
+AutoTestHub — Integration Test Suite Execution Evidence Log
+Command: python3 -m unittest discover tests
+Directory: selenium-worker/
+Timestamp: 2026-10-19T16:25:50+05:30
+Environment: Python 3.12, Selenium 4.x, Headless Chrome 155
+
+[runner] Starting browser for testCaseId: 'int-fail-cleanup'
+[runner] Executing action 1/2: OPEN_URL
+[runner] Executing action 2/2: CLICK
+[browser] Screenshot captured: screenshots/int-fail-cleanup_20261019_162533_5282b2.png
+[runner] Action timeout: Timed out after 0.5s waiting for element (id='missing-elem') to become clickable
+[runner] Closing browser session...
+[runner] Starting browser for testCaseId: 'int-after-fail'
+[runner] Executing action 1/1: OPEN_URL
+[browser] Screenshot captured: screenshots/int-after-fail_20261019_162534_c02bbd.png
+[runner] Closing browser session...
+.[runner] Starting browser for testCaseId: 'int-title-pass'
+[runner] Executing action 1/2: OPEN_URL
+[runner] Executing action 2/2: ASSERT_TITLE
+[browser] Screenshot captured: screenshots/int-title-pass_20261019_162535_e85c4f.png
+[runner] Closing browser session...
+.[runner] Starting browser for testCaseId: 'int-title-fail'
+[runner] Executing action 1/2: OPEN_URL
+[runner] Executing action 2/2: ASSERT_TITLE
+[browser] Screenshot captured: screenshots/int-title-fail_20261019_162540_dcdb62.png
+[runner] Assertion failed: Page title mismatch: expected 'Incorrect Title Expectation', but got 'Controlled Test Sandbox'
+[runner] Closing browser session...
+.[runner] Starting browser for testCaseId: 'int-timeout'
+[runner] Executing action 1/2: OPEN_URL
+[runner] Executing action 2/2: CLICK
+[browser] Screenshot captured: screenshots/int-timeout_20261019_162542_10f20b.png
+[runner] Action timeout: Timed out after 1.0s waiting for element (id='nonexistent-button') to become clickable
+[runner] Closing browser session...
+.[runner] Starting browser for testCaseId: 'int-screen-fail'
+[runner] Executing action 1/2: OPEN_URL
+[runner] Executing action 2/2: ASSERT_TITLE
+[browser] Screenshot captured: screenshots/int-screen-fail_20261019_162548_8bd82a.png
+[runner] Assertion failed: Page title mismatch: expected 'Wrong Title', but got 'Controlled Test Sandbox'
+[runner] Closing browser session...
+.[runner] Starting browser for testCaseId: 'int-screen-pass'
+[runner] Executing action 1/1: OPEN_URL
+[browser] Screenshot captured: screenshots/int-screen-pass_20261019_162548_3d23ff.png
+[runner] Closing browser session...
+.[runner] Starting browser for testCaseId: 'int-form-flow'
+[runner] Executing action 1/4: OPEN_URL
+[runner] Executing action 2/4: TYPE
+[runner] Executing action 3/4: CLICK
+[runner] Executing action 4/4: ASSERT_TITLE
+[browser] Screenshot captured: screenshots/int-form-flow_20261019_162549_894e56.png
+[runner] Closing browser session...
+.[runner] Starting browser for testCaseId: 'int-nav-01'
+[runner] Executing action 1/1: OPEN_URL
+[browser] Screenshot captured: screenshots/int-nav-01_20261019_162550_fa17c4.png
+[runner] Closing browser session...
+.........
+----------------------------------------------------------------------
+Ran 16 tests in 18.552s
+
+OK
+Result: 100% PASSED (0 Failures, 0 Errors)

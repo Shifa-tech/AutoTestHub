@@ -1,0 +1,26 @@
+{
+  "testCases": [
+    {
+      "_id": "6ad5f308777225dd7c9950a4",
+      "name": "Integration Pipeline Smoke Test",
+      "url": "https://example.com",
+      "actions": [
+        { "type": "OPEN_URL" },
+        { "type": "ASSERT_TITLE", "expected": "Example Domain" }
+      ],
+      "expectedResult": "Page title matches 'Example Domain'"
+    },
+    {
+      "_id": "6ad5f308777225dd7c9950a5",
+      "name": "Selenium Web Form Submission Test",
+      "url": "https://www.selenium.dev/selenium/web/web-form.html",
+      "actions": [
+        { "type": "OPEN_URL" },
+        { "type": "TYPE", "locatorType": "name", "locator": "my-text", "value": "Test User" },
+        { "type": "CLICK", "locatorType": "css", "locator": "button" },
+        { "type": "ASSERT_TITLE", "expected": "Web form - target page" }
+      ],
+      "expectedResult": "Form submitted successfully"
+    }
+  ]
+}
